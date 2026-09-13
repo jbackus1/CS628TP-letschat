@@ -2,11 +2,13 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import { useCallback, useEffect, useState } from "react";
 import { UnameContext } from "./unameContext";
 import { refreshSession } from "./api";
-import NavBar from "./Navbar";
 import Chat from "./Chat";
 import Home from "./Home";
 import Login from "./Login";
+import Logout from "./Logout";
+import NavBar from "./Navbar";
 import Profile from "./Profile";
+import Register from "./Register";
 import "./App.css";
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
             <Route exact path="/chat" element={<Chat preview={false} />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/profile" element={<Profile />} />
+            <Route exact path="/register" element={<Register />} />
+            <Route exact path="/logout" element={<Logout {...{ setAuth }} />} />
           </Routes>
         </BrowserRouter>
       </UnameContext>

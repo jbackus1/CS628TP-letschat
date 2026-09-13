@@ -47,6 +47,25 @@ export async function login(user, password) {
   return { uname: user, accessToken };
 }
 
+export async function logout() {
+  const res = await apiFetch("/auth/logout");
+  if (!res.ok) {
+    throw new Error(await res.text());
+  }
+}
+
+export async function register(user, password) {
+  console.log(user, password);
+  const res = await apiFetch("/auth/register", {
+    method: "POST",
+    body: JSON.stringify({ user, password }),
+  });
+  if (!res.ok) {
+    throw new Error(await res.text());
+  }
+  return;
+}
+
 // Called on app load: use the httpOnly refresh cookie (if any) to get a
 // fresh access token so a returning user doesn't have to log in again.
 export async function refreshSession() {

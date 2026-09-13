@@ -19,17 +19,31 @@ export default function NavBar() {
               Chat
             </NavLink>
           </li>
-          <li>
-            {uname !== null ? (
-              <NavLink to="/profile" activeClassName="active">
-                Profile
-              </NavLink>
-            ) : (
-              <NavLink to="/login" activeClassName="active">
-                Login
-              </NavLink>
-            )}
-          </li>
+          {uname !== null ? (
+            <>
+              <li>
+                <NavLink to="/profile" activeClassName="active">
+                  Profile
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/logout">Logout</NavLink>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <NavLink to="/login" activeClassName="active">
+                  Login
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/register" activeClassName="active">
+                  Register
+                </NavLink>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </div>

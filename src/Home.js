@@ -6,7 +6,8 @@ export default function Home() {
       <div className="welcome">
         <h1>Let's Chat!</h1>
         <p>
-          Preview the chat below. <a href="/login">Login</a> to chat.
+          Preview the chat below. <a href="/login">Login</a> or{" "}
+          <a href="/register">register</a> to chat.
         </p>
       </div>
       <Chat />

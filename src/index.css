@@ -86,3 +86,44 @@ h1 {
     }
   }
 }
+
+.flex-v {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap10 {
+  gap: 10px;
+}
+
+.gap5 {
+  gap: 5px;
+}
+
+.maxw400 {
+  max-width: 400px;
+}
+
+.j-center {
+  justify-self: center;
+}
+
+.a-center {
+  align-self: center;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.formline {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
