@@ -5,7 +5,7 @@ export default function Register() {
   const navigate = useNavigate();
 
   function handleRegister(formdata) {
-    register(formdata.username, formdata.password)
+    register(formdata.get("username"), formdata.get("password"))
       .then(() => navigate("/login"))
       .catch((err) => {
         console.error(err);
@@ -20,7 +20,12 @@ export default function Register() {
         </div>
         <div className="formline">
           <label for="password">password</label>
-          <input type="password" placeholder="password" required />
+          <input
+            name="password"
+            type="password"
+            placeholder="password"
+            required
+          />
         </div>
         <div className="formline">
           <button type="submit">Register</button>
