@@ -3,7 +3,7 @@ const API_BASE_URL =
 const WS_BASE_URL =
   process.env.REACT_APP_WS_BASE_URL || API_BASE_URL.replace(/^http/, "ws");
 
-function decodeJwtPayload(token) {
+export function decodeJwtPayload(token) {
   try {
     const payload = token.split(".")[1];
     const base64 = payload.replace(/-/g, "+").replace(/_/g, "/");
