@@ -55,7 +55,6 @@ export async function logout() {
 }
 
 export async function register(user, password) {
-  console.log(user, password);
   const res = await apiFetch("/auth/register", {
     method: "POST",
     body: JSON.stringify({ user, password }),
