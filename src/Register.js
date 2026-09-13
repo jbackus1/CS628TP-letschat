@@ -22,7 +22,9 @@ export default function Register() {
           <label for="password">password</label>
           <input type="password" placeholder="password" required />
         </div>
-        <button type="submit">Register</button>
+        <div className="formline">
+          <button type="submit">Register</button>
+        </div>
       </form>
     </div>
   );
