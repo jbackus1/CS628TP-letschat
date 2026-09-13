@@ -80,6 +80,22 @@ export async function refreshSession() {
   }
 }
 
+export async function fetchProfile(accessToken) {
+  const res = await apiFetch("/profile", { accessToken });
+  if (!res.ok) throw new Error("Failed to load profile.");
+  return res.json();
+}
+
+export async function updateProfile(accessToken, updates) {
+  const res = await apiFetch("/profile", {
+    method: "PUT",
+    accessToken,
+    body: JSON.stringify(updates),
+  });
+  if (!res.ok) throw new Error("Failed to save profile.");
+  return res.json();
+}
+
 export async function fetchChatHistory() {
   const res = await apiFetch("/chat/history");
   if (!res.ok) throw new Error("Failed to load chat history.");

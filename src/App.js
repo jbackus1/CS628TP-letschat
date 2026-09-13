@@ -9,7 +9,6 @@ import Logout from "./Logout";
 import NavBar from "./Navbar";
 import Profile from "./Profile";
 import Register from "./Register";
-import "./App.css";
 
 function App() {
   const [uname, setUname] = useState(null);
@@ -67,14 +66,20 @@ function App() {
       <UnameContext value={{ uname, accessToken, setAuth }}>
         <BrowserRouter>
           <NavBar />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/chat" element={<Chat preview={false} />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/profile" element={<Profile />} />
-            <Route exact path="/register" element={<Register />} />
-            <Route exact path="/logout" element={<Logout {...{ setAuth }} />} />
-          </Routes>
+          <div className="page">
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/chat" element={<Chat preview={false} />} />
+              <Route exact path="/login" element={<Login />} />
+              <Route exact path="/profile" element={<Profile />} />
+              <Route exact path="/register" element={<Register />} />
+              <Route
+                exact
+                path="/logout"
+                element={<Logout {...{ setAuth }} />}
+              />
+            </Routes>
+          </div>
         </BrowserRouter>
       </UnameContext>
     </div>
